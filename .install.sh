@@ -19,15 +19,9 @@ brew tap koekeishiya/formulae
 ## Formulae
 echo "Installing Brew Formulae..."
 ### Essentials
-brew install gsl
-brew install llvm
-brew install boost
-brew install libomp
-brew install armadillo
 brew install wget
 brew install jq
 brew install ripgrep
-brew install bear
 brew install mas
 brew install gh
 brew install ifstat
@@ -37,10 +31,10 @@ brew install sketchybar
 brew install borders
 
 ### Science
-brew install mactex
-brew install hdf5
-brew install gnuplot
-brew install texlab
+#brew install mactex
+#brew install hdf5
+#brew install gnuplot
+#brew install texlab
 
 ### Terminal
 brew install neovim
@@ -53,8 +47,8 @@ brew install lulu
 brew install btop
 brew install svim
 brew install lazygit
-brew install wireguard-go
-brew install dooit
+#brew install wireguard-go
+#brew install dooit
 
 ## Custom HEAD only forks (personal yabai and nnn forks)
 brew install fyabai --head
@@ -69,17 +63,18 @@ brew install --cask orion
 
 ### Office
 brew install --cask inkscape
-brew install --cask libreoffice
-brew install --cask zoom
+brew install --cask gimp
+#brew install --cask libreoffice
+#brew install --cask zoom
 brew install --cask meetingbar
 brew install --cask skim
 brew install --cask vlc
 
 ### Reversing
-brew install --cask machoview
-brew install --cask hex-fiend
-brew install --cask cutter
-brew install --cask sloth
+#brew install --cask machoview
+#brew install --cask hex-fiend
+#brew install --cask cutter
+#brew install --cask sloth
 
 ### Nice to have
 brew install --cask alfred
@@ -93,7 +88,7 @@ brew install --cask font-fira-code
 
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
-mas install 1451685025 #Wireguard
+#mas install 1451685025 #Wireguard
 mas install 497799835 #xCode
 mas install 1480933944 #Vimari
 
@@ -137,11 +132,11 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write -g NSWindowShouldDragOnGesture YES
 
 ## Fix for MX Master 3S
-sudo defaults write /Library/Preferences/com.apple.airport.bt.plist bluetoothCoexMgmt Hybrid
+# sudo defaults write /Library/Preferences/com.apple.airport.bt.plist bluetoothCoexMgmt Hybrid
 
 # Copying and checking out configuration files
 echo "Planting Configuration Files..."
-[ ! -d "$HOME/dotfiles" ] && git clone --bare git@github.com:FelixKratz/dotfiles.git $HOME/dotfiles
+[ ! -d "$HOME/dotfiles" ] && git clone --bare git@github.com:rokk4/dotfilesosx.git $HOME/dotfiles
 git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout master
 
 # Installing Fonts
@@ -149,27 +144,27 @@ git clone git@github.com:shaunsingh/SFMono-Nerd-Font-Ligaturized.git /tmp/SFMono
 mv /tmp/SFMono_Nerd_Font/* $HOME/Library/Fonts
 rm -rf /tmp/SFMono_Nerd_Font/
 
-curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.23/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
 source $HOME/.zshrc
 cfg config --local status.showUntrackedFiles no
 
 # Python Packages (mainly for data science)
-echo "Installing Python Packages..."
-curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
-source $HOME/.zshrc
-conda install -c apple tensorflow-deps
-conda install -c conda-forge pybind11
-conda install matplotlib
-conda install jupyterlab
-conda install seaborn
-conda install opencv
-conda install joblib
-conda install pytables
-pip install tensorflow-macos
-pip install tensorflow-metal
-pip install debugpy
-pip install sklearn
+#echo "Installing Python Packages..."
+#curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
+#source $HOME/.zshrc
+#conda install -c apple tensorflow-deps
+#conda install -c conda-forge pybind11
+#conda install matplotlib
+#conda install jupyterlab
+#conda install seaborn
+#conda install opencv
+#conda install joblib
+#conda install pytables
+#pip install tensorflow-macos
+#pip install tensorflow-metal
+#pip install debugpy
+#pip install sklearn
 
 # Start Services
 echo "Starting Services (grant permissions)..."
