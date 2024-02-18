@@ -89,8 +89,8 @@ brew install --cask font-fira-code
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
 #mas install 1451685025 #Wireguard
-mas install 497799835 #xCode
-mas install 1480933944 #Vimari
+#mas install 497799835 #xCode
+#mas install 1480933944 #Vimari
 
 # macOS Settings
 echo "Changing macOS defaults..."
