@@ -152,7 +152,7 @@ cfg config --local status.showUntrackedFiles no
 # Python Packages (mainly for data science)
 #echo "Installing Python Packages..."
 #curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh | sh
-#source $HOME/.zshrc
+source $HOME/.zshrc
 #conda install -c apple tensorflow-deps
 #conda install -c conda-forge pybind11
 #conda install matplotlib
@@ -177,5 +177,6 @@ brew services start svim
 csrutil status
 echo "Do not forget to disable SIP and reconfigure keyboard -> $HOME/.config/keyboard..."
 open "$HOME/.config/keyboard/KeyboardModifierKeySetup.png"
+
 echo "Add sudoer manually:\n '$(whoami) ALL = (root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | awk "{print \$1;}") $(which yabai) --load-sa' to '/private/etc/sudoers.d/yabai'"
 echo "Installation complete...\n"
