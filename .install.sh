@@ -172,7 +172,7 @@ brew services start skhd
 brew services start fyabai
 brew services start sketchybar
 brew services start borders
-brew services start svim
+#brew services start svim
 
 csrutil status
 echo "Do not forget to disable SIP and reconfigure keyboard -> $HOME/.config/keyboard..."
